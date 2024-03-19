@@ -1,0 +1,9 @@
+const algumacoisa = () =>{
+    return(
+        <div>
+
+        </div>
+    )
+}
+
+export default algumacoisa
