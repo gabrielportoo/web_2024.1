@@ -19,14 +19,18 @@
 // import { PlacaMae } from "./components/atividade01/02MeuPC";
 // import { Memoria } from "./components/atividade01/02MeuPC";
 // import { PlacaDeVideo } from "./components/atividade01/02MeuPC";
-import { World } from "./components/atividade01/03Batalha";
-import { Arena } from "./components/atividade01/03Batalha";
+// import { World } from "./components/atividade01/03Batalha";
+// import { Arena } from "./components/atividade01/03Batalha";
+// import Efeito from "./components/10Efeito/Efeito";
+// import ComponentePromessa from "./components/11Promessas/MinhaPromessa";
+// import ComponentePromessa from "./components/11Promessas/MeuAsync";
+import {ComponenteAvo} from "./components/atividade02/02Pokemon/ComponenteAvo";
 
 function App() {
   return (
       <div>
         <h1> Desenvolvimento de Software para a WEB!</h1>
-        <World />
+        <ComponenteAvo />
       </div>
   )
 }
