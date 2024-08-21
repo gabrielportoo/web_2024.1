@@ -24,13 +24,17 @@
 // import Efeito from "./components/10Efeito/Efeito";
 // import ComponentePromessa from "./components/11Promessas/MinhaPromessa";
 // import ComponentePromessa from "./components/11Promessas/MeuAsync";
-import {ComponenteAvo} from "./components/atividade02/02Pokemon/ComponenteAvo";
+// import {ComponenteAvo} from "./components/atividade02/02Pokemon/ComponenteAvo";
+// import Questao01A from "./components/prova01/Questao01";
+// import Questao02 from "./components/prova01/Questao02";
+// import Questao03 from "./components/prova01/Questao03";
+import Questao04 from "./components/prova01/Questao04";
+
 
 function App() {
   return (
       <div>
-        <h1> Desenvolvimento de Software para a WEB!</h1>
-        <ComponenteAvo />
+        <Questao04 />
       </div>
   )
 }
