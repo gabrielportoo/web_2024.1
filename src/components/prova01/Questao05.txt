@@ -1,6 +1,6 @@
- problema de "props drilling" ocorre em aplicações React quando você precisa passar dados através de muitos níveis de componentes.
- Isso pode tornar o código difícil de manter e entender, especialmente se o componente intermediário não precisa realmente desses dados,
- mas só os repassa para componentes mais profundos na hierarquia.
+Problema de "props drilling" ocorre em aplicações React quando você precisa passar dados através de muitos níveis de componentes.
+Isso pode tornar o código difícil de manter e entender, especialmente se o componente intermediário não precisa realmente desses dados,
+mas só os repassa para componentes mais profundos na hierarquia.
 
 O Contexto do React é uma solução para esse problema. Vamos explorar como isso funciona e como pode resolver o problema de props drilling:
 O Contexto do React é uma maneira de compartilhar valores e funções entre componentes sem precisar passar explicitamente props através de cada nível
