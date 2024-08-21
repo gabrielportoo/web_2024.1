@@ -5,7 +5,7 @@ import ColorTheme from "./MyColorContext"
 
 const FunctionContextA = () => {
     
-    const cores = {bkgA:"green",bkgB:"white",bkgC:"yellow", bkgD:"blue"}
+    const cores = {bkgA:"white",bkgB:"green",bkgC:"yellow", bkgD:"blue"}
     
     return (
 

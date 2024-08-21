@@ -4,11 +4,11 @@ import ColorTheme from "./MyColorContext"
 
 const FunctionContextB = () => {
     
-    const {bkgA} = useContext(ColorTheme)
+    const {bkgB} = useContext(ColorTheme)
     return (
         
         <div>
-            <h1 style={{backgroundColor: bkgA}}>
+            <h1 style={{backgroundColor: bkgB}}>
                 Contexto B
             </h1>
         </div>

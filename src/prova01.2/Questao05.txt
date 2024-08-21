@@ -1,0 +1,136 @@
+O problema de "props drilling" ocorre quando você precisa passar dados de um componente pai para um componente filho, e esse componente filho, por sua vez, passa os dados para um componente neto, e assim por diante. Isso pode tornar o código difícil de manter e menos eficiente, especialmente quando você tem muitos níveis de componentes.
+
+O Context API do React pode ajudar a resolver esse problema de forma eficaz.
+O Context API permite que você compartilhe valores entre componentes sem precisar passar explicitamente esses valores por meio de props em todos os níveis da árvore de componentes. Isso é feito criando um "contexto" que pode ser acessado por qualquer componente que consuma esse contexto.
+
+Exemplo de props.drilling:
+App
+└── ParentComponent
+    └── ChildComponent
+        └── GrandchildComponent
+            └── GreatGrandchildComponent
+
+
+Código com props.drilling:
+
+// App.jsx
+import React from 'react';
+import ParentComponent from './ParentComponent';
+
+const App = () => {
+    const userData = { name: "John", age: 30 };
+
+    return (
+        <ParentComponent user={userData} />
+    );
+};
+
+export default App;
+
+// ParentComponent.jsx
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+const ParentComponent = ({ user }) => {
+    return (
+        <ChildComponent user={user} />
+    );
+};
+
+export default ParentComponent;
+
+// ChildComponent.jsx
+import React from 'react';
+import GrandchildComponent from './GrandchildComponent';
+
+const ChildComponent = ({ user }) => {
+    return (
+        <GrandchildComponent user={user} />
+    );
+};
+
+export default ChildComponent;
+
+// GrandchildComponent.jsx
+import React from 'react';
+import GreatGrandchildComponent from './GreatGrandchildComponent';
+
+const GrandchildComponent = ({ user }) => {
+    return (
+        <GreatGrandchildComponent user={user} />
+    );
+};
+
+export default GrandchildComponent;
+
+// GreatGrandchildComponent.jsx
+import React from 'react';
+
+const GreatGrandchildComponent = ({ user }) => {
+    return (
+        <div>
+            <h1>User Name: {user.name}</h1>
+            <h2>User Age: {user.age}</h2>
+        </div>
+    );
+};
+
+export default GreatGrandchildComponent;
+
+
+
+Código com Contexto:
+
+// UserContext.jsx
+import React, { createContext, useContext } from 'react';
+
+// Cria o contexto
+const UserContext = createContext();
+
+// Componente Provider
+export const UserProvider = ({ children, user }) => {
+    return (
+        <UserContext.Provider value={user}>
+            {children}
+        </UserContext.Provider>
+    );
+};
+
+// Hook para consumir o contexto
+export const useUser = () => {
+    return useContext(UserContext);
+};
+
+// App.jsx
+import React from 'react';
+import { UserProvider } from './UserContext';
+import ParentComponent from './ParentComponent';
+
+const App = () => {
+    const userData = { name: "John", age: 30 };
+
+    return (
+        <UserProvider user={userData}>
+            <ParentComponent />
+        </UserProvider>
+    );
+};
+
+export default App;
+
+// GreatGrandchildComponent.jsx
+import React from 'react';
+import { useUser } from './UserContext';
+
+const GreatGrandchildComponent = () => {
+    const user = useUser();
+
+    return (
+        <div>
+            <h1>User Name: {user.name}</h1>
+            <h2>User Age: {user.age}</h2>
+        </div>
+    );
+};
+
+export default GreatGrandchildComponent;
