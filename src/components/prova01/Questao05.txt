@@ -1,0 +1,76 @@
+Problema de "props drilling" ocorre em aplicações React quando você precisa passar dados através de muitos níveis de componentes.
+Isso pode tornar o código difícil de manter e entender, especialmente se o componente intermediário não precisa realmente desses dados,
+mas só os repassa para componentes mais profundos na hierarquia.
+
+O Contexto do React é uma solução para esse problema. Vamos explorar como isso funciona e como pode resolver o problema de props drilling:
+O Contexto do React é uma maneira de compartilhar valores e funções entre componentes sem precisar passar explicitamente props através de cada nível
+da árvore de componentes. Ele permite que você defina um "contexto" que pode ser acessado por qualquer componente em sua árvore que esteja dentro do
+provedor desse contexto.
+
+import React, { createContext, useState } from 'react';
+
+// Criação do contexto
+const MyContext = createContext();
+
+// Componente que fornece o contexto
+const MyProvider = ({ children }) => {
+  const [value, setValue] = useState('valor inicial');
+  return (
+    <MyContext.Provider value={{ value, setValue }}>
+      {children}
+    </MyContext.Provider>
+  );
+};
+
+// Uso do Provider
+import React from 'react';
+import { MyProvider } from './MyContext';
+import ComponentA from './ComponentA';
+
+const App = () => (
+  <MyProvider>
+    <ComponentA />
+  </MyProvider>
+);
+
+export default App;
+
+// Acessa o contexto
+import React, { useContext } from 'react';
+import { MyContext } from './MyContext';
+
+const ComponentB = () => {
+  const { value, setValue } = useContext(MyContext);
+
+  return (
+    <div>
+      <p>O valor do contexto é: {value}</p>
+      <button onClick={() => setValue('novo valor')}>Alterar valor</button>
+    </div>
+  );
+};
+
+export default ComponentB;
+
+
+
+// Consome o contexto
+import React from 'react';
+import { MyContext } from './MyContext';
+
+class ComponentB extends React.Component {
+  render() {
+    return (
+      <MyContext.Consumer>
+        {({ value, setValue }) => (
+          <div>
+            <p>O valor do contexto é: {value}</p>
+            <button onClick={() => setValue('novo valor')}>Alterar valor</button>
+          </div>
+        )}
+      </MyContext.Consumer>
+    );
+  }
+}
+
+export default ComponentB;

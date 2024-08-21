@@ -23,19 +23,13 @@
 // import Efeito from "./components/10Efeito/Efeito";
 // import ComponentePromessa from "./components/11Promessas/MinhaPromessa";
 // import ComponentePromessa from "./components/11Promessas/MeuAsync";
-// import { Arena, Enemy, Hero, World } from "./components/atividade01/03Batalha";
-// import {ComponenteAvo} from "./components/atividade02/02Pokemon/ComponenteAvo";
-// import CovidAxios from "./components/12Axios/Covidaxios";
-// import PrincipalRedux from "./components/13Redux/PrincipalRedux";
-// import SaveLoadData from "./components/14Storage/SaveLoadData";
-// import SaveLoadData from "./components/14Storage/CopiadoDoGit";
-// import MyNavbar from "./components/16Bootstrap/MyNavbar";
-import Main from "./components/17CRUD/Main";
+import { ComponenteAvo } from "./components/atividade02/02Pokemon/ComponenteAvo";
 
 function App() {
   return (
     <div>
-      <Main />
+      <h1> Desenvolvimento de Software para a WEB!</h1>
+      <ComponenteAvo />
     </div>
   );
 }
