@@ -1,0 +1,50 @@
+{
+  "professores": [
+    {
+      "nome": "Wladimir Tavares da Silva",
+      "curso": "SISTEMAS DE INFORMAÇÃO",
+      "titulacao": "DOUTORADO",
+      "ai": {
+        "es": false,
+        "lc": true,
+        "mc": true
+      },
+      "universidade": {
+        "ufc": false,
+        "ifce": true
+      },
+      "id": "2583"
+    },
+    {
+      "id": "78ed",
+      "nome": "Jefferson de Carvalho",
+      "curso": "DESIGN DIGITAL",
+      "titulacao": "DOUTORADO",
+      "ai": {
+        "es": true,
+        "lc": false,
+        "mc": false
+      },
+      "universidade": {
+        "ufc": true,
+        "ifce": false
+      }
+    },
+    {
+      "id": "05e8",
+      "nome": "Lucas Ismaily",
+      "curso": "SISTEMAS DE INFORMAÇÃO",
+      "titulacao": "DOUTORADO",
+      "ai": {
+        "es": false,
+        "lc": true,
+        "mc": true
+      },
+      "universidade": {
+        "ufc": true,
+        "ifce": false
+      }
+    }
+  ],
+  "alunos": []
+}

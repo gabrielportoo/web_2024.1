@@ -23,13 +23,14 @@
 // import Efeito from "./components/10Efeito/Efeito";
 // import ComponentePromessa from "./components/11Promessas/MinhaPromessa";
 // import ComponentePromessa from "./components/11Promessas/MeuAsync";
-import { ComponenteAvo } from "./components/atividade02/02Pokemon/ComponenteAvo";
+// import { ComponenteAvo } from "./components/atividade02/02Pokemon/ComponenteAvo";
+// import MyNavbar from "./components/16Bootstrap/MyNavbar";
+import Main from "./components/17CRUD/Main";
 
 function App() {
   return (
     <div>
-      <h1> Desenvolvimento de Software para a WEB!</h1>
-      <ComponenteAvo />
+      <Main />
     </div>
   );
 }
